@@ -3,5 +3,5 @@ function cd() {
 }
 
 function muffliato() {
-  /opt/local/bin/play -n synth brownnoise > /dev/null
+  play -n synth brownnoise > /dev/null
 }
