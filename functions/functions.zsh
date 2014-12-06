@@ -9,3 +9,6 @@ function muffliato() {
 function backup-projects() {
   rsync -f ':- .gitignore' -f '- .git/' -a -v ~/Projects ~/Dropbox
 }
+function ql {
+  (qlmanage -p "$1" >& /dev/null &)
+}
