@@ -5,3 +5,7 @@ function cd() {
 function muffliato() {
   play -n synth brownnoise > /dev/null
 }
+
+function backup-projects() {
+  rsync -f ':- .gitignore' -f '- .git/' -a -v ~/Projects ~/Dropbox
+}
