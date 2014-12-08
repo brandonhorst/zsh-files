@@ -9,6 +9,16 @@ function muffliato() {
 function backup-projects() {
   rsync -f ':- .gitignore' -f '- .git/' -a -v ~/Projects ~/Dropbox
 }
+
 function ql {
   (qlmanage -p "$1" >& /dev/null &)
+}
+
+function block {
+  echo "127.0.0.1 $1" >> /etc/hosts
+}
+
+function unblock {
+  egrep -v "127\\.0\\.0\\.1\\s+$1" /etc/hosts > /tmp/tmphosts
+  cat /tmp/tmphosts > /etc/hosts
 }
