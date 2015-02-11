@@ -16,11 +16,13 @@ function ql {
 
 function block {
   echo "127.0.0.1 $1" >> /etc/hosts
+  echo "127.0.0.1 www.$1" >> /etc/hosts
 }
 
 function unblock {
   egrep -v "127\\.0\\.0\\.1\\s+$1" /etc/hosts > /tmp/tmphosts
-  cat /tmp/tmphosts > /etc/hosts
+  egrep -v "127\\.0\\.0\\.1\\s+www\.$1" /tmp/tmphosts > /tmp/tmphosts1
+  cat /tmp/tmphosts1 > /etc/hosts
 }
 
 function npmjs {
