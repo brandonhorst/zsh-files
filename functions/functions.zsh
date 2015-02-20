@@ -32,3 +32,7 @@ function npmjs {
 function github {
   git config --get remote.origin.url | xargs open
 }
+
+function tmpclone {
+  builtin cd /tmp && git clone $1 && clear && cd $(basename $1 .git)
+}
