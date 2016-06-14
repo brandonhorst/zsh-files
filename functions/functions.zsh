@@ -7,7 +7,7 @@ function muffliato() {
 }
 
 function backup-projects() {
-  rsync -f ':- .gitignore' -f '- .git/' -a -v ~/Projects ~/Dropbox
+  rsync -d --delete-excluded -f ':- .gitignore' -f '- .git/' -a -v ~/Projects ~/Dropbox
 }
 
 function ql {
