@@ -14,4 +14,4 @@ git_custom_status() {
 # Combine it all into a final right-side prompt
 RPS1='$(git_custom_status) $EPS1'
 
-PROMPT='%{$fg[blue]%}%c%{$fg[yellow]%}> %{$reset_color%}'
+PROMPT='%{$fg[magenta]%}%c%{$fg[yellow]%}> %{$reset_color%}'
