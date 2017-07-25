@@ -36,3 +36,9 @@ function github {
 function tmpclone {
   builtin cd /tmp && git clone $1 && clear && cd $(basename $1 .git)
 }
+
+function brazil-reload {
+  brazil-package-cache disable_edge_cache
+  brazil-package-cache enable_edge_cache
+  brazil-package-cache start
+}
