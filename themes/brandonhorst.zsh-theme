@@ -1,11 +1,11 @@
 google3_prompt_info() {
   if [[ $PWD =~ '/google/src/cloud/[^/]+/(.+)/google3(.*)' ]]; then
     # Use CitC client names as window titles in screen/tmux
-    print -n "\ek${match[1]}\e\\"
+    # print -n "\ek${match[1]}\e\\"
 
-    print -r -- "%F{magenta}$match[1]:%F{green}//${match[2]#/}"
+    print -r -- "$fg[magenta]$match[1]:$fg[green]//${match[2]#/}"
   else
-    print -r -- "%F{green}%c"
+    print -r -- "$fg[green]%c"
   fi
 }
 
